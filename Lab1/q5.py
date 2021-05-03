@@ -11,7 +11,7 @@ def ResistenciaEq(Valores_res):
     return soma
 
 
-n_res = int(input('Numero de resistores: '))        
+n_res = int(input('Numero de resistores: '))
 R = []
 for c in range(0, n_res):
     x = float(input(f'Valor do {c + 1}º resistor: '))
