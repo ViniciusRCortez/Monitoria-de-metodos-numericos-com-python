@@ -3,7 +3,7 @@ Objetivo: Resolver questão 2 do segundo laboratorio.
 """
 
 
-def fibonachi(n):
+def fibonachi(n):   #n é o ordem do elemento, por exemplo se n=1 retorna o primeiro termo da serie
     if n == 1 or n == 0:
         return 0  # primeiro elemento é 0
     elif n == 2:

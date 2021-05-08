@@ -8,8 +8,8 @@ import numpy as np
 def cosseno(a):  # calcula o cosseno do angulo
     soma = 0
     for i in range(0, 30):
-        soma = soma + (pow(-1, i) * (pow(a, 2 * i) / fatorial(
-            2 * i)))  # o primeiro elemento escolhe o sinal, o segundo o numero da expressão
+        soma = soma + (pow(-1, i) * (pow(a, 2 * i) / fatorial(2 * i)))
+        # o primeiro elemento escolhe o sinal, o segundo o numero da expressão
     return soma
 
 
