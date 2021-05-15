@@ -1,4 +1,3 @@
-
 def newton_raphson(n, f, f_linha, parada):
     """
     Função python que encontra a raiz de um polinomio pelo metodo Newton-Raphson
@@ -15,6 +14,9 @@ def newton_raphson(n, f, f_linha, parada):
     while True:
         # a cada iteração vamos adicionar um novo valor de x à lista
         # x[-1] é o ultimo elemento de uma lista
+        if f_linha(x[-1]) == 0:
+            print(f'Não foi possivel encontrar a raiz pois f_linha(x) = 0 \nEscolher outro palpite')
+            return 0
         x.append(x[-1] - f(x[-1]) / f_linha(x[-1]))  # x(n+1) pela formula de Newton-Raphson
         func.append(f(x[-1]))
         erro.append(abs(x[-1] - x[-2]))  # erro absoluto
