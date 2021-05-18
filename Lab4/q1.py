@@ -4,8 +4,12 @@ Objetivo: Resolver questão 1 do quarto laboratorio.
 import numpy as np
 
 
-a = np.random.randn(5, 5)   #gera um array aleatorio(com numeros float e negativos
-b = np.random.randn(5).reshape(5, 1)
+a = np.array([[3, 0.841, -0.841],
+              [2, -1250, 0],
+              [-2.71, -2.71, 20]])   #gera um array aleatorio(com numeros float e negativos
+b = np.array([[1.951],
+              [-624.25],
+              [-7.809]])
 
 #função pro metodo de gauss:
 a = a.astype('float')   #transforma a matriz em float, pois como int daria erro de arredondamento
