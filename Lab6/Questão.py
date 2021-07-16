@@ -1,8 +1,6 @@
 """
 Resolução das questões do Lab6.
 """
-import numpy as np
-from Metodos import Pol_Newton, Pol_Lagrange
 import matplotlib.pyplot as plt
 from Metodos_numericos.metodos import *
 
@@ -12,10 +10,10 @@ y = np.array([], dtype='float16')       #Pontos de Y
 pol = np.array([], dtype='float16')     #Pontos da aproximação
 for i in x:
     y = np.append(y, f(i))
-
 #Para o Metodo de Newton:
-pol = Pol_Newton(x, y, 0, 5)
-plt.plot(pol["X"], pol["Y"], 'r-', label='Valores aproximados')
+pol = interpol(x, y, 0, 5)
+pol.Newton()
+plt.plot(pol.resultado["X"], pol.resultado["Y"], 'r-', label='Valores aproximados')
 plt.plot(x, y, 'bx', label='Valores medidos')
 plt.xlabel("Valores de X")
 plt.ylabel('Valores de F(x)')
@@ -26,10 +24,10 @@ plt.legend(loc='best')
 plt.grid()
 plt.show()
 
-
 #Para o Metodo de Lagrange:
-pol = Pol_Lagrange(x, y, 0, 5)
-plt.plot(pol["X"], pol["Y"], 'r-', label='Valores aproximados')
+pol = interpol(x, y, 0, 5)
+pol.Lagrange()
+plt.plot(pol.resultado["X"], pol.resultado["Y"], 'r-', label='Valores aproximados')
 plt.plot(x, y, 'bx', label='Valores medidos')
 plt.xlabel("Valores de X")
 plt.ylabel('Valores de F(x)')
@@ -38,18 +36,3 @@ plt.style.use('ggplot')
 plt.tight_layout()
 plt.legend(loc='best')
 plt.show()
-
-#Para o Metodo de Newton:
-pol = interpol(x, y, 0, 5)
-pol.Newton()
-plt.plot(pol.resultado["X"], pol.resultado["Y"], 'r-', label='Valores aproximados')
-plt.plot(x, y, 'bx', label='Valores medidos')
-plt.xlabel("Valores de X")
-plt.ylabel('Valores de F(x)')
-plt.title('Grafico de interpolação de Newton clase')
-plt.style.use('ggplot')
-plt.tight_layout()
-plt.legend(loc='best')
-plt.grid()
-plt.show()
-
