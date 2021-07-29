@@ -1,26 +1,22 @@
 from Metodos_numericos.metodos import *
 import numpy as np
 
-y = lambda x: x**3 - 9*x + 5
-d = lambda x: 3*x**2 - 9
-p = lambda x: (5 + x**3)/9
-x = raizes(y, 0.5)
-x.bissecao(0.5, 1)
-print(f'para bicesseção: {x.x}')
+def mmq2(x, th, exp, n=0):
+    if exp == 0:
+        return x * th[n] ** exp
+    else:
+        return x * th[n] ** exp + mmq(x, th, exp - 1, n + 1)
 
-x.posicao_falsa(0.5, 1)
-print(f'para pfalsa: {x.x}')
 
-x.ponto_fixo(p)
-print(f'para pfixo: {x.x}')
-
-x.secante(1, 2)
-print(f'para sec: {x.x}')
-
-x.secante_mod(0.01)
-print(f'para secm: {x.x}')
-
-x.Newton_Raphson(d)
-print(f'para nr: {x.x}')
+def mmq(x, th, grau):
+    aux = grau
+    soma = 0
+    for c in range(0, grau):
+        soma += th[c]*(x**aux)
+        aux -= 1
+    soma += th[-1]
+    return soma
+th = [1, 2, 3, 4]
+print(mmq(2, th, 3))
 
 

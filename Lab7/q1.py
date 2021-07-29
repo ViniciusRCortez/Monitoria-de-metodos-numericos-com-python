@@ -1,7 +1,7 @@
 """
 Questão 1 do laboratorio 7: Interpolação por spline quadratica.
 """
-import numpy as np
+
 import matplotlib.pyplot as plt
 from Metodos_numericos.metodos import *
 
